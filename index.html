@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {
+            margin: 0
+        }
+
+        .fc {
+            display: flex;
+            position: relative;
+            background-color: #b7b094;  
+            width: 100%;
+            height: 100vh;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .gallery {
+            animation: fadeIn 0.8s ease-in;
+            display: grid;
+            width: 55vw;
+            height: 80vh;
+            background-color: wheat;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            place-items: center;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.38), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+            padding: 30px;
+            gap: 30px;
+        }
+
+        #pfp {
+            position: fixed;
+            width: 5vw;
+            height: auto;
+            top: 5px;
+            left: 5px;
+            box-shadow: none;
+            border-radius: 5px;
+        }
+
+        #one {
+            display: grid;
+        }
+
+        #two {
+            display: none;
+        }
+        
+        #next {
+            color:white;
+            background-color: black;
+            border-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.38), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+            border-radius: 100%; 
+            margin-left: 1%;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        #previous {
+            display:none;
+            color:white;    
+            background-color: black;
+            border-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.38), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+            border-radius: 100%;
+            margin-right: 1%;
+            animation: fadeIn 0.8s ease-in;            
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.38), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+            border-radius: 25px;
+        }
+
+        #credits {
+            background-color: wheat;
+            width: 30vw;
+            height: 95vh;
+            display: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.38), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+            position: fixed;
+            text-align: center;
+            font-family: sans-serif;
+            transition: 0.8s;
+            opacity: 0;
+        }
+
+        #pika {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 5px;
+        }
+
+        #credBtn {
+            right: 15px;
+            bottom: 15px;
+            position:fixed;
+            background-color: wheat;
+            border-color: black;
+            border-radius: 5px;
+        }
+
+        #pfpBtn {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media screen and (max-width: 600px) {
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+            }
+
+            #credits {
+                width: 55vw;
+            }
+
+        }
+
+
+
+    </style>
+    <head>
+        <title>twigbran.ch</title>  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="lightbox/lightbox.min.css" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+    </head>
+
+    <body>
+        <div class="fc">
+            <img src="assets/pfp.png" id="pfp">
+
+            <button id="previous" onclick="previous()"><</button>
+            <div id="one" class="gallery">
+                <div>
+                    <a href="assets/art/A the puppers.png" data-lightbox="gallery">
+                        <img src="assets/tmb/A the puppers tmb.jpg">
+                    </a> 
+                </div>
+
+                <div>
+                    <a href="assets/art/B Trapper Fly abrd.png" data-lightbox="gallery">
+                        <img src="assets/tmb/B Trapper Fly abrd tmb.jpg">
+                    </a>
+                </div>
+
+                <div>
+                    <a href="assets/art/C Wizzmax fin.png" data-lightbox="gallery">
+                        <img src="assets/tmb/C Wizzmax fin tmb.jpg">
+                    </a>
+                </div>
+                
+                <div>
+                    <a href="assets/art/D Turtle claw.png" data-lightbox="gallery">
+                        <img src="assets/tmb/D Turtle Claw tmb.jpg">
+                    </a>
+                </div>
+                
+                <div>
+                    <a href="assets/art/E Soap friends.png" data-lightbox="gallery">
+                        <img src="assets/tmb/E Soap friends tmb.jpg">
+                    </a>
+                </div>
+
+                <div>
+                    <a href="assets/art/F pokemon team ....png" data-lightbox="gallery">
+                        <img src="assets/tmb/F pokemon team tmb.jpg">
+                    </a>
+                </div>
+            </div>
+
+
+
+
+            <div id="two" class="gallery">
+                <div>
+                    <a href="assets/art/G scene.png" data-lightbox="gallery">
+                        <img src="assets/tmb/G scene tmb.jpg">
+                    </a> 
+                </div>
+
+                <div>
+                    <a href="assets/art/H Tuffer guys fin.png" data-lightbox="gallery">
+                        <img src="assets/tmb/H Tuffer guys tmb.jpg">
+                    </a>
+                </div>
+
+                <div>
+                    <a href="assets/art/I Dave planet destroyer.png" data-lightbox="gallery">
+                        <img src="assets/tmb/I Dave planet destroyer tmb.jpg">
+                    </a>
+                </div>
+                
+                <div>
+                    <a href="assets/art/J help.png" data-lightbox="gallery">
+                        <img src="assets/tmb/J help tmb.jpg">
+                    </a>
+                </div>
+                
+                <div>
+                    <a href="assets/art/K burn it with fire.png" data-lightbox="gallery">
+                        <img src="assets/tmb/K burn it with fire tmb.jpg">
+                    </a>
+                </div>
+
+                <div>
+                    <a href="assets/art/L furry.png" data-lightbox="gallery">
+                        <img src="assets/tmb/L furry tmb.jpg">
+                    </a>
+                </div>
+            </div>
+            <button id="next" onclick="next()">></button>
+
+            <div id="credits">
+                <h1>website for the legendary twigbranch!</h1>
+                <p id="lightboxJS">thank you to <a href="https://victordiego.com/lightbox/">lightboxjs</a> for making this possible!</p>
+                <p id="pika"> made with ❤️ by pika! </p>
+            </div>
+            <button id="credBtn" onclick="credits()">C</button>
+        </div>
+    </body>
+
+    <script src="lightbox/lightbox.min.js"></script>
+    <script>
+        const imgHolderOne = document.getElementById("one");
+        const imgHolderTwo = document.getElementById("two");
+        const credDiv = document.getElementById("credits");
+        const previousBtn = document.getElementById("previous");
+        const nextBtn = document.getElementById("next");
+        var credVal = 0;
+
+        function next() {
+            imgHolderOne.style.display = "none";
+            imgHolderTwo.style.display = "grid";
+            nextBtn.style.display = "none";
+            previousBtn.style.display = "block";
+        }
+
+        function previous() {
+            imgHolderOne.style.display = "grid";
+            imgHolderTwo.style.display = "none";
+            nextBtn.style.display = "block";
+            previousBtn.style.display = "none";
+        }
+
+        function credits() {
+            if (credVal == 0) {
+                credDiv.style.display = "block";
+                setTimeout(() => { credDiv.style.opacity = "1" }, 10);
+                credVal = 1;
+            } else {
+                credDiv.style.opacity = "0";
+                setTimeout(() => { credDiv.style.display = "none";}, 800);
+                credVal = 0;
+            }
+        }
+
+
+    </script>
+</html>
