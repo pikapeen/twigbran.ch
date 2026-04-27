@@ -2,7 +2,8 @@
 <html>
     <style>
         body {
-            margin: 0
+            margin: 0;
+            background-color: #b7b094;
         }
 
         .fc {
@@ -40,6 +41,7 @@
             left: 5px;
             box-shadow: none;
             border-radius: 5px;
+            opacity: 100;
         }
 
         #one {
@@ -58,20 +60,21 @@
             border-radius: 100%; 
             margin-left: 1%;
             animation: fadeIn 0.8s ease-in;
+            transition: 0.8s;
         }
 
         #previous {
-            display:none;
             color:white;    
             background-color: black;
             border-color: white;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.38), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
             border-radius: 100%;
-            margin-right: 1%;
-            animation: fadeIn 0.8s ease-in;            
+            margin-right: 1%;  
+            opacity: 0;  
+            transition: 0.8s;
         }
 
-        img {
+        .item {
             max-width: 100%;
             height: auto;
             display: block;
@@ -92,6 +95,7 @@
             font-family: sans-serif;
             transition: 0.8s;
             opacity: 0;
+            padding: 10px;
         }
 
         #pika {
@@ -110,13 +114,6 @@
             border-radius: 5px;
         }
 
-        #pfpBtn {
-            position: fixed;
-            top: 15px;
-            left: 15px;
-            
-        }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -127,10 +124,11 @@
             .gallery {
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: 1fr 1fr 1fr;
+                width: 90vw;
             }
 
             #credits {
-                width: 55vw;
+                width: 90vw;
             }
 
         }
@@ -141,52 +139,60 @@
     <head>
         <title>twigbran.ch</title>  
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="lightbox/lightbox.min.css" rel="stylesheet">
+        <meta name="description" content="the official twigbranch site!">
+        <meta name="keywords" content="art, twigbranch, twigbran.ch, artist, portfolio">
+        <meta property="og:title" content="twigbran.ch" />
+        <meta property="og.description" content="the official twigbranch site!" />
+        <meta property="og.image" content="/assets/pfp.png" />
+        <meta property="og.url" content="https://twigbran.ch" />
+        <meta charset="UTF-8">
+        <link href="lightbox/lightbox.min.css" rel="stylesheet" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
+        <link rel="canonical" href="https://twigbran.ch" />
     </head>
 
     <body>
         <div class="fc">
-            <img src="assets/pfp.png" id="pfp">
+            <a href=""> <img src="assets/pfp.png" id="pfp"> </a>
 
             <button id="previous" onclick="previous()"><</button>
             <div id="one" class="gallery">
                 <div>
                     <a href="assets/art/A the puppers.png" data-lightbox="gallery">
-                        <img src="assets/tmb/A the puppers tmb.jpg">
+                        <img class="item" src="assets/tmb/A the puppers tmb.jpg" alt="puppies">
                     </a> 
                 </div>
 
                 <div>
                     <a href="assets/art/B Trapper Fly abrd.png" data-lightbox="gallery">
-                        <img src="assets/tmb/B Trapper Fly abrd tmb.jpg">
+                        <img class="item" src="assets/tmb/B Trapper Fly abrd tmb.jpg" alt="trapper fly">
                     </a>
                 </div>
 
                 <div>
                     <a href="assets/art/C Wizzmax fin.png" data-lightbox="gallery">
-                        <img src="assets/tmb/C Wizzmax fin tmb.jpg">
+                        <img class="item" src="assets/tmb/C Wizzmax fin tmb.jpg" alt="wizzmax">
                     </a>
                 </div>
                 
                 <div>
                     <a href="assets/art/D Turtle claw.png" data-lightbox="gallery">
-                        <img src="assets/tmb/D Turtle Claw tmb.jpg">
+                        <img class="item" src="assets/tmb/D Turtle Claw tmb.jpg" alt="turtle claw">
                     </a>
                 </div>
                 
                 <div>
                     <a href="assets/art/E Soap friends.png" data-lightbox="gallery">
-                        <img src="assets/tmb/E Soap friends tmb.jpg">
+                        <img  class="item" src="assets/tmb/E Soap friends tmb.jpg" alt="soap friends">
                     </a>
                 </div>
 
                 <div>
                     <a href="assets/art/F pokemon team ....png" data-lightbox="gallery">
-                        <img src="assets/tmb/F pokemon team tmb.jpg">
+                        <img class="item" src="assets/tmb/F pokemon team tmb.jpg" alt="pokemon team">
                     </a>
                 </div>
             </div>
@@ -197,37 +203,37 @@
             <div id="two" class="gallery">
                 <div>
                     <a href="assets/art/G scene.png" data-lightbox="gallery">
-                        <img src="assets/tmb/G scene tmb.jpg">
+                        <img class="item" src="assets/tmb/G scene tmb.jpg" alt="tree scene">
                     </a> 
                 </div>
 
                 <div>
                     <a href="assets/art/H Tuffer guys fin.png" data-lightbox="gallery">
-                        <img src="assets/tmb/H Tuffer guys tmb.jpg">
+                        <img class="item" src="assets/tmb/H Tuffer guys tmb.jpg" alt="tuffer guys">
                     </a>
                 </div>
 
                 <div>
                     <a href="assets/art/I Dave planet destroyer.png" data-lightbox="gallery">
-                        <img src="assets/tmb/I Dave planet destroyer tmb.jpg">
+                        <img class="item" src="assets/tmb/I Dave planet destroyer tmb.jpg" alt="dave the planet destroyer">
                     </a>
                 </div>
                 
                 <div>
                     <a href="assets/art/J help.png" data-lightbox="gallery">
-                        <img src="assets/tmb/J help tmb.jpg">
+                        <img class="item" src="assets/tmb/J help tmb.jpg" alt="cat buys nerf guns">
                     </a>
                 </div>
                 
                 <div>
                     <a href="assets/art/K burn it with fire.png" data-lightbox="gallery">
-                        <img src="assets/tmb/K burn it with fire tmb.jpg">
+                        <img class="item" src="assets/tmb/K burn it with fire tmb.jpg" alt="burn it with fire!">
                     </a>
                 </div>
 
                 <div>
                     <a href="assets/art/L furry.png" data-lightbox="gallery">
-                        <img src="assets/tmb/L furry tmb.jpg">
+                        <img class="item" src="assets/tmb/L furry tmb.jpg" alt="furry">
                     </a>
                 </div>
             </div>
@@ -236,6 +242,7 @@
             <div id="credits">
                 <h1>website for the legendary twigbranch!</h1>
                 <p id="lightboxJS">thank you to <a href="https://victordiego.com/lightbox/">lightboxjs</a> for making this possible!</p>
+                <p> proudly <a href="https://github.com/pikapeen/twigbran.ch">open source</a> on github!</p>
                 <p id="pika"> made with ❤️ by pika! </p>
             </div>
             <button id="credBtn" onclick="credits()">C</button>
@@ -254,15 +261,15 @@
         function next() {
             imgHolderOne.style.display = "none";
             imgHolderTwo.style.display = "grid";
-            nextBtn.style.display = "none";
-            previousBtn.style.display = "block";
+            nextBtn.style.opacity = "0";
+            previousBtn.style.opacity = "100";
         }
 
         function previous() {
             imgHolderOne.style.display = "grid";
             imgHolderTwo.style.display = "none";
-            nextBtn.style.display = "block";
-            previousBtn.style.display = "none";
+            nextBtn.style.opacity = "100";
+            previousBtn.style.opacity = "0";
         }
 
         function credits() {
